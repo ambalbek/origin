@@ -1,0 +1,16 @@
+[0;1;31m●[0m jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; generated)
+   Active: [0;1;31mfailed[0m (Result: exit-code) since Thu 2020-02-06 18:35:57 CST; 20s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 9010 ExecStop=/etc/rc.d/init.d/jenkins stop (code=exited, status=0/SUCCESS)
+  Process: 9015 ExecStart=/etc/rc.d/init.d/jenkins start [0;1;31m(code=exited, status=1/FAILURE)[0m
+    Tasks: 52 (limit: 26213)
+   Memory: 2.5G
+   CGroup: /system.slice/jenkins.service
+           └─3667 /etc/alternatives/java -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war --logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --httpPort=8080 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20
+
+Feb 06 18:35:57 avi8-r systemd[1]: Starting LSB: Jenkins Automation Server...
+Feb 06 18:35:57 avi8-r jenkins[9015]: JENKINS_HOME directory does not exist: /var/lib/jenkins
+Feb 06 18:35:57 avi8-r systemd[1]: [0;1;39m[0;1;31m[0;1;39mjenkins.service: Control process exited, code=exited status=1[0m
+Feb 06 18:35:57 avi8-r systemd[1]: [0;1;39m[0;1;31m[0;1;39mjenkins.service: Failed with result 'exit-code'.[0m
+Feb 06 18:35:57 avi8-r systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start LSB: Jenkins Automation Server.[0m
