@@ -1,0 +1,9 @@
+radius = int(input("radius:"))
+pi=3.14
+volume = (4/3)*pi*radius**3
+circumference= radius*pi*2
+area= radius**2*4*pi
+print('radius=', radius)   
+print('volume=',volume)
+print('area=',area)
+print('circumference=',circumference)
