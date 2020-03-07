@@ -1,21 +1,23 @@
-class Animal:
-    def __init__(self, name):    # Constructor of the class
-        self.name = name
+def body_info():
+    height= float(input("what is your height?(inches or meters)"))
+    weight= float(input("what is your weight? (pounds or killograms)"))
+    system=input("are you measured on metric or imperial?").lower().strip()
+    return (height, weight, system)
+def calculate_bmi(height,weight,system="metric"):
+    if system=="metric":
+        bmi=weight/(height**2)
+    else:
+        bmi=703*(weight/(height**2))
+    return bmi
 
-    def speak(self):              # Abstract method, defined by convention only
-        raise NotImplementedError("Subclass must implement abstract method")
-
-
-class Dog(Animal):
-    def speak(self):
-        return self.name+' says Woof!'
-    
-class Cat(Animal):
-    def speak(self):
-        return self.name+' says Meow!'
-    
-fido = Dog('Fido')
-isis = Cat('Isis')
-
-print(fido.speak())
-print(isis.speak())
+while True:
+    if system.startswith('i'):
+        bmi=calculate_bmi(weight,system=system,height=height)
+        print(f"your bmi is {bmi}")
+        break
+    elif system.startswith('m'):
+        bmi=calculate_bmi(weight,height)
+        print(f"your bmi is {bmi}")
+        break
+    else:
+        print("please use imperial or metric.")

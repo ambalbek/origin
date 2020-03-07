@@ -1,15 +1,5 @@
-if __name__ == '__main__':
-    s = 'aA6'
-    result = ["False", "False", "False", "False", "False"]
-    for i in s:
-        if i.isalnum():
-            result[0] = "True"
-        if i.isalpha():
-            result[1] = "True"
-        if i.isdigit():
-            result[2] = "True"
-        if i.islower():
-            result[3] = "True"
-        if i.isupper():
-            result[4] = "True"
-    print(*result, sep="\n")
+import string
+from random import *
+characters = string.ascii_letters + string.punctuation  + string.digits
+password =  "".join(choice(characters) for x in range(randint(8, 16)))
+print password
