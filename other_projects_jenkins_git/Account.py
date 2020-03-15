@@ -26,6 +26,6 @@ class Account:
             
 a=Account('Azizbek Gapurov', 10000)
 print(a)            
-print(a.deposit(10000))
+print(a.deposit(1000))
 print(a.withdraw(1100))
 print(a)

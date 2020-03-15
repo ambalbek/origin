@@ -6,7 +6,7 @@ node
     }
     stage('Test')
     {
-        echo 'this my pipeline for you bitch!'
+        echo 'this my pipeline for you bitches!'
     }
     stage('python')
     {
