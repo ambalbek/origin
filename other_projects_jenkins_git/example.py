@@ -10,7 +10,6 @@ while True:
         f = fib(int(input()))
     except:
         print("please enter the number not letter!")
-        
     else:
         break
 print(f)
