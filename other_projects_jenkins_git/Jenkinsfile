@@ -10,12 +10,16 @@ node
     }
     stage('python')
     {
-       sh label: '', script: '''cd /var/lib/jenkins/workspace/mypipe/other_projects_jenkins_git
+       sh label: '', script: '''cd /var/lib/jenkins/workspace/docker-pipeline/other_projects_jenkins_git
 ls -al
 python3 *.py'''
     }
-    stage('email')
+    stage('docker')
     {
-        mail bcc: '', body: 'this is the result', cc: 'a.turganbaeva1@gmail.com', from: '', replyTo: '', subject: 'pipeline test', to: 'azal88@gmail.com'
+        sh label: '', script: '''docker run centos
+aws ecr get-login --no-include-email --region us-east-2 > ./login
+source ./login
+docker tag centos:latest 440414308601.dkr.ecr.us-east-2.amazonaws.com/ambalbek:latest
+docker push 440414308601.dkr.ecr.us-east-2.amazonaws.com/ambalbek:latest'''
     }
 }
