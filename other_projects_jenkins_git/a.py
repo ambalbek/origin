@@ -1,6 +1,6 @@
-myfile=open('aziz.csv', 'r+')
+myfile=open('aziz.csv', 'w+')
 myfile.write('Hello World!')
-myfile.writelines(['put some comments here',])
-for i in myfile():
+myfile.writelines(['\n1234567890','\nThis is the new line'])
+for i in myfile:
     print(i)
 
